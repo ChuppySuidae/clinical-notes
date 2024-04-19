@@ -3,12 +3,9 @@ import Box from '@mui/material/Box'
 import ModeSelect from '~/components/ModeSelect/ModeSelect'
 import AppIcon from '@mui/icons-material/Apps'
 // import TrelloIcon from '~/assets/trello.svg'
-import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
-import Workspaces from './Menus/Workspaces'
-import Recent from './Menus/Recent'
-import Starred from './Menus/Starred'
-import Templates from './Menus/Templates'
+
+
 import Button from '@mui/material/Button'
 import Badge from '@mui/material/Badge'
 import TextField from '@mui/material/TextField'
@@ -41,23 +38,40 @@ function AppBar() {
           <Typography variant="span" sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white' }}>MedicalAI</Typography>
         </Box>
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
-          <Workspaces />
-          <Recent />
-          <Starred />
-          <Templates />
-          {/* <Button
+          <Button
+            sx={{
+              color: 'white',
+              border: 'none',
+              '&hover': { border: 'none' }
+            }}
+            href ='/'
+            
+          >
+            <Typography variant="span" sx={{ fontSize: '1.0rem', fontWeight: 'bold', color: 'white' }}>HomePage</Typography>
+          </Button>
+          <Button
             sx={{
               color: 'white',
               border: 'none',
               '&hover': { border: 'none' }
             }}
             variant="outlined"
-            startIcon={<LibraryAddIcon />}
+            href ='/patients'
           >
-            Create
-          </Button> */}
+            <Typography variant="span" sx={{ fontSize: '1.0rem', fontWeight: 'bold', color: 'white' }}>Patients</Typography>
+          </Button>
+          <Button
+            sx={{
+              color: 'white',
+              border: 'none',
+              '&hover': { border: 'none' }
+            }}
+            variant="outlined"
+            href ='/encounters'
+          >
+            <Typography variant="span" sx={{ fontSize: '1.0rem', fontWeight: 'bold', color: 'white' }}>Encounters</Typography>
+          </Button>
         </Box>
-
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <TextField
